@@ -9,6 +9,7 @@ jobs:
     name: write_to_PR
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@main
       - run: gh pr comment $PR_URL --body "I did my first github action"
         env: 
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
