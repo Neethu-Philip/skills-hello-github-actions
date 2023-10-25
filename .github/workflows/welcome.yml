@@ -8,3 +8,8 @@ jobs:
   write_to_PR:
     name: write_to_PR
     runs-on: ubuntu-latest
+    steps:
+      - run: gh pr comment $PR_URL --body "I did my first github action"
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html.url }}
