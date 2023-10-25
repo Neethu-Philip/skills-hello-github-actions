@@ -4,3 +4,7 @@ on:
     types: [opened]
 permissions:
   pull-requests: write
+jobs:
+  write_to_PR:
+    name: write_to_PR
+    runs-on: ubuntu-latest
